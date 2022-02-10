@@ -1,12 +1,10 @@
-let randomNum;
-let outcomeItem;
-
+//let computer "play" the game in advance
 function computerPlay(){
 let randomNum = Math.ceil(Math.random()*3)
 
 if (randomNum === 1){
     outcomeItem = "rock"
-} 
+}
 else if (randomNum === 2){
     outcomeItem = "paper"
 }
@@ -15,6 +13,7 @@ else {
 }
 }
 
+//prompt and then evaluate input from player
 function playerInput(){
 let initialInput = prompt("Enter rock, paper or scissors")
 let input = initialInput.toLowerCase();
@@ -41,5 +40,8 @@ else if (outcomeItem === "scissors" && input === "paper"){
     }
 }
 
-computerPlay()
-playerInput()
+//play game 5 times
+for (i=0; i<5; i++){
+    computerPlay()
+    playerInput()
+}
